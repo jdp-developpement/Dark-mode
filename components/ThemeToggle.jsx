@@ -4,21 +4,18 @@ function ThemeToggle({ theme, toggleTheme }) {
   return (
     <>
       <div>
-        {theme === "light" ? (
-          <button
-            onClick={toggleTheme}
-            className="p-3 bg-gray-200 rounded-full shadow transistion-colors duration-300"
-          >
+        <button
+          onClick={toggleTheme}
+          className={`p-3 bg-gray-200 rounded-full shadow transistion-colors duration-300 ${
+            theme === "light" ? "bg-gray-200" : "bg-gray-700"
+          } `}
+        >
+          {theme === "light" ? (
             <Sun className="text-yellow-400" />
-          </button>
-        ) : (
-          <button
-            onClick={toggleTheme}
-            className="p-3 bg-gray-700 rounded-full shadow transistion-colors duration-300"
-          >
+          ) : (
             <Moon className="text-black" />
-          </button>
-        )}
+          )}
+        </button>
       </div>
     </>
   );
